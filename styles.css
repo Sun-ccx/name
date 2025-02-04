@@ -134,6 +134,13 @@ footer {
     object-fit: cover; /* 保证图片不变形 */
     border: 3px solid #3f94d8;
 }
+
+nav ul li a:hover {
+    color: #3f94d8;
+    transform: scale(1.1);  /* 增加一个放大的效果 */
+    font-weight: bold;  /* 强调链接 */
+}
+
 /* 响应式设计 */
 @media (max-width: 768px) {
     .container {
