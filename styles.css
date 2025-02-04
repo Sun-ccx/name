@@ -121,7 +121,19 @@ footer {
     font-size: 1rem;
     color: #333;
 }
+/* 个人照片样式 */
+.profile-img-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
 
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover; /* 保证图片不变形 */
+    border: 3px solid #3f94d8;
+}
 /* 响应式设计 */
 @media (max-width: 768px) {
     .container {
