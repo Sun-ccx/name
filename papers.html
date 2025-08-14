@@ -224,31 +224,47 @@
             font-size: 1rem;
         }
 
+        /* 更新后的收款码样式 */
         .qr-code-section {
             text-align: center;
             margin: 2rem 0;
             padding: 2rem;
-            background-color: #f9fafb;
-            border-radius: 8px;
-            border: 2px dashed #d1d5db;
+            background-color: #fff;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
         }
 
-        .qr-code-section p {
-            color: #666;
+        .qr-code-section h4 {
+            color: #374151;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .qr-code-container {
+            display: inline-block;
+            padding: 1rem;
+            background-color: #fafafa;
+            border-radius: 12px;
+            border: 2px solid #e5e7eb;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .qr-code-image {
+            width: 240px;
+            height: 240px;
+            border-radius: 8px;
+            display: block;
+            object-fit: contain;
+            background-color: #fff;
+        }
+
+        .qr-code-caption {
+            margin-top: 1rem;
+            color: #6b7280;
+            font-size: 0.9rem;
             font-style: italic;
-            margin-bottom: 1rem;
-        }
-
-        .qr-placeholder {
-            width: 200px;
-            height: 200px;
-            background-color: #e5e7eb;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #9ca3af;
-            border-radius: 8px;
         }
 
         /* 汉堡菜单样式 */
@@ -331,6 +347,15 @@
             .hero-slider {
                 margin-top: 60px;
             }
+
+            .qr-code-image {
+                width: 200px;
+                height: 200px;
+            }
+
+            .qr-code-section {
+                padding: 1.5rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -338,6 +363,15 @@
                 display: block;
                 overflow-x: auto;
                 white-space: nowrap;
+            }
+
+            .qr-code-image {
+                width: 180px;
+                height: 180px;
+            }
+
+            .qr-code-section {
+                padding: 1rem;
             }
         }
     </style>
@@ -463,10 +497,11 @@
                 </div>
 
                 <div class="qr-code-section">
-                    <p>收款码 (Payment QR Code)</p>
-                    <div class="qr-placeholder">
-                        <img src="wukong.jpg" alt="Prof. Bin Sheng">
+                    <h4>收款码 Payment QR Code</h4>
+                    <div class="qr-code-container">
+                        <img src="wukong.jpg" alt="Payment QR Code" class="qr-code-image">
                     </div>
+                    <p class="qr-code-caption">请使用微信或支付宝扫描收款码进行支付<br>Please scan the QR code with WeChat or Alipay to make payment</p>
                 </div>
             </div>
         </div>
