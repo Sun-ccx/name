@@ -13,28 +13,25 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Arial', sans-serif;
             line-height: 1.6;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            min-height: 100vh;
+            background-color: #f8f9fa;
         }
 
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
         }
 
         /* 导航栏样式 */
         .main-header {
-            background: linear-gradient(90deg, #1e3c72 0%, #2a5298 100%);
-            box-shadow: 0 4px 20px rgba(30, 60, 114, 0.3);
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 3px solid #4a90e2;
         }
 
         .navbar {
@@ -45,13 +42,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 0 20px;
         }
 
         .logo {
             display: flex;
             align-items: center;
             text-decoration: none;
-            color: #ffffff;
+            color: #333;
         }
 
         .logo img {
@@ -62,7 +60,6 @@
         .logo-text {
             font-size: 1.5em;
             font-weight: bold;
-            color: #ffffff;
         }
 
        .nav-links {
@@ -76,7 +73,7 @@
 
         .nav-links a {
             text-decoration: none;
-            color: #ffffff;
+            color: #333;
             font-weight: 500;
             transition: all 0.3s ease;
             white-space: nowrap;
@@ -85,179 +82,8 @@
         }
 
         .nav-links a:hover {
-            color: #4a90e2;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-        }
-
-        /* 主旨演讲者样式 */
-        .keynote-speakers-section {
-            margin-top: 100px;
-            padding: 4rem 0;
-            min-height: calc(100vh - 100px);
-        }
-
-        .keynote-speakers-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .keynote-speakers-header h1 {
-            font-size: 3.5em;
-            color: #ffffff;
-            margin-bottom: 1rem;
-            font-weight: 700;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-            letter-spacing: 2px;
-        }
-
-        .keynote-speakers-header h3 {
-            font-size: 1.3em;
-            color: #e8f4fd;
-            font-weight: 300;
-            margin-bottom: 1rem;
-        }
-
-        .speaker {
-            background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(30, 60, 114, 0.15);
-            margin-bottom: 3rem;
-            padding: 3rem;
-            transition: all 0.4s ease;
-            border: 2px solid rgba(74, 144, 226, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .speaker::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, #1e3c72 0%, #2a5298 50%, #4a90e2 100%);
-        }
-
-        .speaker:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 30px 60px rgba(30, 60, 114, 0.25);
-            border-color: rgba(74, 144, 226, 0.3);
-        }
-
-        .speaker-content {
-            display: flex;
-            align-items: flex-start;
-            gap: 3rem;
-        }
-
-        .speaker-photo {
-            flex-shrink: 0;
-        }
-
-        .speaker-photo img {
-            width: 200px;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 15px;
-            border: 4px solid #4a90e2;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(74, 144, 226, 0.3);
-        }
-
-        .speaker-photo-placeholder {
-            width: 200px;
-            height: 250px;
-            background: linear-gradient(135deg, #1e3c72 0%, #4a90e2 100%);
-            border-radius: 15px;
-            border: 4px solid #4a90e2;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 16px;
-            text-align: center;
-            font-weight: 500;
-            box-shadow: 0 8px 25px rgba(74, 144, 226, 0.3);
-        }
-
-        .speaker:hover .speaker-photo img,
-        .speaker:hover .speaker-photo-placeholder {
-            border-color: #2a5298;
-            transform: scale(1.05);
-        }
-
-        .speaker-info {
-            flex: 1;
-        }
-
-        .speaker-name {
-            font-size: 2.2em;
-            font-weight: 700;
-            color: #1e3c72;
-            margin-bottom: 0.5rem;
-            letter-spacing: 1px;
-        }
-
-        .speaker-affiliation {
-            font-size: 1.2em;
-            color: #4a90e2;
-            margin-bottom: 1.5rem;
-            font-style: italic;
-            font-weight: 500;
-        }
-
-        .talk-section {
-            margin-bottom: 2rem;
-        }
-
-        .talk-title {
-            font-size: 1.4em;
-            font-weight: 600;
-            color: #1e3c72;
-            margin-bottom: 1rem;
-            padding-left: 1rem;
-            border-left: 4px solid #4a90e2;
-            background: linear-gradient(90deg, rgba(74, 144, 226, 0.1) 0%, transparent 100%);
-            padding: 0.8rem 1rem;
-            border-radius: 8px;
-        }
-
-        .talk-abstract {
-            font-size: 1.1em;
-            color: #2c3e50;
-            line-height: 1.8;
-            text-align: justify;
-            background: linear-gradient(145deg, #f8fafc 0%, #e8f4fd 100%);
-            padding: 2rem;
-            border-radius: 12px;
-            border: 1px solid rgba(74, 144, 226, 0.2);
-            box-shadow: 0 4px 15px rgba(74, 144, 226, 0.1);
-        }
-
-        .bio-section h3 {
-            font-size: 1.4em;
-            font-weight: 600;
-            color: #1e3c72;
-            margin-bottom: 1rem;
-            padding-left: 1rem;
-            border-left: 4px solid #2a5298;
-            background: linear-gradient(90deg, rgba(42, 82, 152, 0.1) 0%, transparent 100%);
-            padding: 0.8rem 1rem;
-            border-radius: 8px;
-        }
-
-        .speaker-bio {
-            font-size: 1.1em;
-            color: #2c3e50;
-            line-height: 1.8;
-            text-align: justify;
-            background: linear-gradient(145deg, #f8fafc 0%, #e8f4fd 100%);
-            padding: 2rem;
-            border-radius: 12px;
-            border: 1px solid rgba(42, 82, 152, 0.2);
-            box-shadow: 0 4px 15px rgba(42, 82, 152, 0.1);
+            color: #007bff;
+            background: rgba(0, 123, 255, 0.1);
         }
 
         /* 汉堡菜单样式 */
@@ -280,7 +106,7 @@
         .hamburger-inner {
             width: 100%;
             height: 2px;
-            background-color: #ffffff;
+            background-color: #333;
             position: absolute;
             left: 0;
             top: 50%;
@@ -293,7 +119,7 @@
             content: '';
             width: 100%;
             height: 2px;
-            background-color: #ffffff;
+            background-color: #333;
             position: absolute;
             left: 0;
             transition: transform 0.3s;
@@ -305,6 +131,213 @@
 
         .hamburger-inner::after {
             top: 6px;
+        }
+
+        /* 主旨演讲者样式 */
+        .keynote-speakers-section {
+            margin-top: 80px;
+            padding: 4rem 0;
+            min-height: calc(100vh - 80px);
+        }
+
+        .keynote-speakers-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 0 20px;
+        }
+
+        .keynote-speakers-header h1 {
+            font-size: 3.5em;
+            color: #4a90e2;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+            letter-spacing: 2px;
+            position: relative;
+        }
+
+        .keynote-speakers-header h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, #007bff, #0056b3);
+            border-radius: 2px;
+        }
+
+        .keynote-speakers-header h3 {
+            font-size: 1.3em;
+            color: #666;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        .tracing-beam {
+            background: linear-gradient(45deg, #f5f7fa, #e9ecef);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 0 20px;
+        }
+
+        .speaker {
+            background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+            padding: 3rem;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(0, 123, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .speaker::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, #007bff, #0056b3);
+        }
+
+        .speaker:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 123, 255, 0.15);
+            border-color: rgba(0, 123, 255, 0.3);
+        }
+
+        .speaker-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 3rem;
+        }
+
+        .speaker-photo {
+            flex-shrink: 0;
+        }
+
+        .speaker-photo img {
+            width: 200px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 3px solid #007bff;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0, 123, 255, 0.2);
+        }
+
+        .speaker-photo-placeholder {
+            width: 200px;
+            height: 250px;
+            background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+            border-radius: 12px;
+            border: 3px solid #007bff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            text-align: center;
+            font-weight: 500;
+            box-shadow: 0 8px 25px rgba(0, 123, 255, 0.2);
+        }
+
+        .speaker:hover .speaker-photo img,
+        .speaker:hover .speaker-photo-placeholder {
+            border-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .speaker-info {
+            flex: 1;
+        }
+
+        .speaker-name {
+            font-size: 2.2em;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .speaker-affiliation {
+            font-size: 1.2em;
+            color: #007bff;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        .talk-section {
+            margin-bottom: 2rem;
+        }
+
+        .talk-title {
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            padding-left: 1rem;
+            border-left: 4px solid #007bff;
+            background: linear-gradient(90deg, rgba(0, 123, 255, 0.1) 0%, transparent 100%);
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+        }
+
+        .talk-abstract {
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.8;
+            text-align: justify;
+            background: linear-gradient(145deg, #f8fafc 0%, #e8f4fd 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 123, 255, 0.1);
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.05);
+        }
+
+        .bio-section h3 {
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            padding-left: 1rem;
+            border-left: 4px solid #0056b3;
+            background: linear-gradient(90deg, rgba(0, 86, 179, 0.1) 0%, transparent 100%);
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+        }
+
+        .speaker-bio {
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.8;
+            text-align: justify;
+            background: linear-gradient(145deg, #f8fafc 0%, #e8f4fd 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 86, 179, 0.1);
+            box-shadow: 0 4px 15px rgba(0, 86, 179, 0.05);
+        }
+
+        .badge {
+            display: inline-block;
+            background: #007bff;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
         }
 
         /* 移动端样式 */
@@ -319,12 +352,11 @@
                 top: 70px;
                 left: 0;
                 width: 100%;
-                background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-                box-shadow: 0 8px 25px rgba(30, 60, 114, 0.3);
+                background: #fff;
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
                 z-index: 1000;
                 flex-direction: column;
                 padding: 1rem;
-                border-bottom: 3px solid #4a90e2;
             }
 
             .nav-links li {
@@ -341,6 +373,7 @@
 
             .speaker {
                 padding: 2rem 1.5rem;
+                margin: 0 10px 3rem 10px;
             }
 
             .speaker-content {
@@ -363,6 +396,11 @@
             .speaker-affiliation {
                 text-align: center;
             }
+
+            .tracing-beam {
+                margin: 0 10px;
+                padding: 1.5rem;
+            }
         }
 
         /* 动画效果 */
@@ -377,12 +415,85 @@
             }
         }
 
+        @keyframes slideInFromLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInFromRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
         .speaker {
             animation: fadeInUp 0.8s ease-out;
+        }
+
+        .speaker-photo {
+            animation: slideInFromLeft 1s ease-out;
+        }
+
+        .speaker-info {
+            animation: slideInFromRight 1s ease-out;
+        }
+
+        /* 微妙的背景动画 */
+        .keynote-speakers-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(0, 123, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 86, 179, 0.1) 0%, transparent 50%);
+            z-index: -1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* 鼠标悬停时的文字效果 */
+        .speaker-name:hover {
+            background: linear-gradient(45deg, #007bff, #0056b3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transition: all 0.3s ease;
+        }
+
+        /* 阅读进度指示器 */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(to right, #007bff, #0056b3);
+            z-index: 9999;
+            transition: width 0.3s ease;
         }
     </style>
 </head>
 <body>
+    <div class="progress-bar"></div>
+    
      <header class="main-header">
     <nav class="navbar">
         <div class="container">
@@ -421,36 +532,39 @@
                     <h3>Cyberworlds 2025 Conference</h3>
                 </div>
 
-                <div class="speaker">
-                    <div class="speaker-content">
-                        <div class="speaker-photo">
-                            <!-- 证件照占位区域 - 您可以将演讲者照片放在这里 -->
-                            <div class="speaker-photo-placeholder">
-                                Prof. Bin SHENG<br>
-                                Photo Placeholder<br>
-                                (200×250px)
-                            </div>
-                            <!-- 如果有照片，请使用以下代码替换上面的占位符：
-                            <img src="prof_bin_sheng.jpg" alt="Prof. Bin Sheng">
-                            -->
-                        </div>
-                        
-                        <div class="speaker-info">
-                            <h2 class="speaker-name">Prof. Bin SHENG</h2>
-                            <div class="speaker-affiliation">Professor, Shanghai Jiao Tong University</div>
-                            
-                            <div class="talk-section">
-                                <h3 class="talk-title">Title: REVERIE: A deep reinforcement learning-based VR sports system to combat adolescent obesity</h3>
-                                
-                                <div class="talk-abstract">
-                                    <strong>Abstract:</strong> Adolescents with overweight can improve not only their physical fitness but also their mental health through physical activity. However, they often face multiple barriers, such as insufficient motivation and skills, low self-esteem, and negative peer pressure. In our research, we have developed an advanced virtual reality (VR) sports system specifically designed for adolescents, named REVERIE. This system integrates deep reinforcement learning and focuses on guidance, delivering an immersive virtual sports experience. REVERIE consists of three core components: a VR sports environment, VR sports guidance, and VR sports visualization. To ensure the safety of the VR sports environment, we adopt an iterative human-in-the-loop optimization process. We have proposed a two-stage deep reinforcement learning method based on templates and feedback: in the template stage, the artificial virtual agent acquires fine-grained sports skills; in the feedback stage, it is personalized to each participant. To enhance the VR sports visualization, we have integrated a sports-oriented immersion enhancement module into REVERIE. Quantitative results show that REVERIE outperforms existing methods in terms of both safety and user experience. This research highlights the potential of VR sports as an innovative sports management approach to benefit overweight adolescents.
+                <div class="tracing-beam">
+                    <div class="speaker">
+                        <div class="badge">Featured Speaker</div>
+                        <div class="speaker-content">
+                            <div class="speaker-photo">
+                                <!-- 证件照占位区域 - 您可以将演讲者照片放在这里 -->
+                                <div class="speaker-photo-placeholder">
+                                    Prof. Bin SHENG<br>
+                                    Photo Placeholder<br>
+                                    (200×250px)
                                 </div>
+                                <!-- 如果有照片，请使用以下代码替换上面的占位符：
+                                <img src="prof_bin_sheng.jpg" alt="Prof. Bin Sheng">
+                                -->
                             </div>
+                            
+                            <div class="speaker-info">
+                                <h2 class="speaker-name">Prof. Bin SHENG</h2>
+                                <div class="speaker-affiliation">Professor, Shanghai Jiao Tong University</div>
+                                
+                                <div class="talk-section">
+                                    <h3 class="talk-title">Title: REVERIE: A deep reinforcement learning-based VR sports system to combat adolescent obesity</h3>
+                                    
+                                    <div class="talk-abstract">
+                                        <strong>Abstract:</strong> Adolescents with overweight can improve not only their physical fitness but also their mental health through physical activity. However, they often face multiple barriers, such as insufficient motivation and skills, low self-esteem, and negative peer pressure. In our research, we have developed an advanced virtual reality (VR) sports system specifically designed for adolescents, named REVERIE. This system integrates deep reinforcement learning and focuses on guidance, delivering an immersive virtual sports experience. REVERIE consists of three core components: a VR sports environment, VR sports guidance, and VR sports visualization. To ensure the safety of the VR sports environment, we adopt an iterative human-in-the-loop optimization process. We have proposed a two-stage deep reinforcement learning method based on templates and feedback: in the template stage, the artificial virtual agent acquires fine-grained sports skills; in the feedback stage, it is personalized to each participant. To enhance the VR sports visualization, we have integrated a sports-oriented immersion enhancement module into REVERIE. Quantitative results show that REVERIE outperforms existing methods in terms of both safety and user experience. This research highlights the potential of VR sports as an innovative sports management approach to benefit overweight adolescents.
+                                    </div>
+                                </div>
 
-                            <div class="bio-section">
-                                <h3>Biography</h3>
-                                <div class="speaker-bio">
-                                    Bin Sheng obtained his Ph.D. degree in Computer Science and Engineering from The Chinese University of Hong Kong in 2011. He currently serves as a Full Professor at the Department of Computer Science and Engineering, Shanghai Jiao Tong University. His research interests span virtual reality, machine learning, and medical data analysis. His work has been published in top-tier journals, including Nature Medicine, Nature Communications, IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), IEEE Transactions on Visualization and Computer Graphics (TVCG), and International Journal of Computer Vision (IJCV). Dr. Sheng holds editorial roles as Managing Editor of The Visual Computer and Associate Editor of the Journal of Virtual Reality and Intelligent Hardware. He has also contributed significantly to conference organization, serving as Program Co-Chair of Computer Graphics International (CGI) from 2020 to 2022, and Conference Co-Chair of CGI (2023–2024) and CASA 2024. Additionally, he was AI Challenge Co-Chair for DeepDRiD (ISBI 2020), DRAC (MICCAI 2022), and MMAC (MICCAI 2023). In recognition of his contributions, he received the Outstanding Contribution Award from the Computer Graphics Society in 2023.
+                                <div class="bio-section">
+                                    <h3>Biography</h3>
+                                    <div class="speaker-bio">
+                                        Bin Sheng obtained his Ph.D. degree in Computer Science and Engineering from The Chinese University of Hong Kong in 2011. He currently serves as a Full Professor at the Department of Computer Science and Engineering, Shanghai Jiao Tong University. His research interests span virtual reality, machine learning, and medical data analysis. His work has been published in top-tier journals, including Nature Medicine, Nature Communications, IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), IEEE Transactions on Visualization and Computer Graphics (TVCG), and International Journal of Computer Vision (IJCV). Dr. Sheng holds editorial roles as Managing Editor of The Visual Computer and Associate Editor of the Journal of Virtual Reality and Intelligent Hardware. He has also contributed significantly to conference organization, serving as Program Co-Chair of Computer Graphics International (CGI) from 2020 to 2022, and Conference Co-Chair of CGI (2023–2024) and CASA 2024. Additionally, he was AI Challenge Co-Chair for DeepDRiD (ISBI 2020), DRAC (MICCAI 2022), and MMAC (MICCAI 2023). In recognition of his contributions, he received the Outstanding Contribution Award from the Computer Graphics Society in 2023.
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -494,6 +608,79 @@
                 speaker.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
                 observer.observe(speaker);
             });
+
+            // 阅读进度指示器
+            window.addEventListener('scroll', function() {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                document.querySelector('.progress-bar').style.width = scrolled + "%";
+            });
+
+            // 添加鼠标跟随效果
+            document.addEventListener('mousemove', function(e) {
+                const cursor = document.querySelector('.custom-cursor');
+                if (!cursor) {
+                    const newCursor = document.createElement('div');
+                    newCursor.classList.add('custom-cursor');
+                    newCursor.style.cssText = `
+                        position: fixed;
+                        width: 20px;
+                        height: 20px;
+                        background: rgba(0, 123, 255, 0.5);
+                        border-radius: 50%;
+                        pointer-events: none;
+                        z-index: 9999;
+                        transition: transform 0.1s ease;
+                    `;
+                    document.body.appendChild(newCursor);
+                }
+                
+                const actualCursor = document.querySelector('.custom-cursor');
+                actualCursor.style.left = e.clientX - 10 + 'px';
+                actualCursor.style.top = e.clientY - 10 + 'px';
+            });
+
+            // 为演讲者卡片添加点击涟漪效果
+            document.querySelectorAll('.speaker').forEach(speaker => {
+                speaker.addEventListener('click', function(e) {
+                    const ripple = document.createElement('span');
+                    const rect = this.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    const x = e.clientX - rect.left - size / 2;
+                    const y = e.clientY - rect.top - size / 2;
+                    
+                    ripple.style.cssText = `
+                        position: absolute;
+                        border-radius: 50%;
+                        background: rgba(0, 123, 255, 0.3);
+                        transform: scale(0);
+                        animation: ripple 0.6s linear;
+                        left: ${x}px;
+                        top: ${y}px;
+                        width: ${size}px;
+                        height: ${size}px;
+                    `;
+                    
+                    this.appendChild(ripple);
+                    
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+                });
+            });
+
+            // 添加涟漪动画
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes ripple {
+                    to {
+                        transform: scale(4);
+                        opacity: 0;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
         });
     </script>
     
