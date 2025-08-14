@@ -1,56 +1,501 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh">
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>个人荣誉 - 魏明强教授</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Keynote Speakers - Cyberworlds 2025</title>
+    <style>
+        /* 基础样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 导航栏样式 */
+        .main-header {
+            background: linear-gradient(90deg, #1e3c72 0%, #2a5298 100%);
+            box-shadow: 0 4px 20px rgba(30, 60, 114, 0.3);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 3px solid #4a90e2;
+        }
+
+        .navbar {
+            padding: 1rem 0;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+       .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.6rem;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            padding: 0 1rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            padding: 8px 12px;
+            border-radius: 6px;
+        }
+
+        .nav-links a:hover {
+            color: #4a90e2;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        /* 主旨演讲者样式 */
+        .keynote-speakers-section {
+            margin-top: 100px;
+            padding: 4rem 0;
+            min-height: calc(100vh - 100px);
+        }
+
+        .keynote-speakers-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .keynote-speakers-header h1 {
+            font-size: 3.5em;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+            letter-spacing: 2px;
+        }
+
+        .keynote-speakers-header h3 {
+            font-size: 1.3em;
+            color: #e8f4fd;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        .speaker {
+            background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(30, 60, 114, 0.15);
+            margin-bottom: 3rem;
+            padding: 3rem;
+            transition: all 0.4s ease;
+            border: 2px solid rgba(74, 144, 226, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .speaker::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #1e3c72 0%, #2a5298 50%, #4a90e2 100%);
+        }
+
+        .speaker:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 30px 60px rgba(30, 60, 114, 0.25);
+            border-color: rgba(74, 144, 226, 0.3);
+        }
+
+        .speaker-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 3rem;
+        }
+
+        .speaker-photo {
+            flex-shrink: 0;
+        }
+
+        .speaker-photo img {
+            width: 200px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 4px solid #4a90e2;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(74, 144, 226, 0.3);
+        }
+
+        .speaker-photo-placeholder {
+            width: 200px;
+            height: 250px;
+            background: linear-gradient(135deg, #1e3c72 0%, #4a90e2 100%);
+            border-radius: 15px;
+            border: 4px solid #4a90e2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            text-align: center;
+            font-weight: 500;
+            box-shadow: 0 8px 25px rgba(74, 144, 226, 0.3);
+        }
+
+        .speaker:hover .speaker-photo img,
+        .speaker:hover .speaker-photo-placeholder {
+            border-color: #2a5298;
+            transform: scale(1.05);
+        }
+
+        .speaker-info {
+            flex: 1;
+        }
+
+        .speaker-name {
+            font-size: 2.2em;
+            font-weight: 700;
+            color: #1e3c72;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .speaker-affiliation {
+            font-size: 1.2em;
+            color: #4a90e2;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        .talk-section {
+            margin-bottom: 2rem;
+        }
+
+        .talk-title {
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #1e3c72;
+            margin-bottom: 1rem;
+            padding-left: 1rem;
+            border-left: 4px solid #4a90e2;
+            background: linear-gradient(90deg, rgba(74, 144, 226, 0.1) 0%, transparent 100%);
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+        }
+
+        .talk-abstract {
+            font-size: 1.1em;
+            color: #2c3e50;
+            line-height: 1.8;
+            text-align: justify;
+            background: linear-gradient(145deg, #f8fafc 0%, #e8f4fd 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(74, 144, 226, 0.2);
+            box-shadow: 0 4px 15px rgba(74, 144, 226, 0.1);
+        }
+
+        .bio-section h3 {
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #1e3c72;
+            margin-bottom: 1rem;
+            padding-left: 1rem;
+            border-left: 4px solid #2a5298;
+            background: linear-gradient(90deg, rgba(42, 82, 152, 0.1) 0%, transparent 100%);
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+        }
+
+        .speaker-bio {
+            font-size: 1.1em;
+            color: #2c3e50;
+            line-height: 1.8;
+            text-align: justify;
+            background: linear-gradient(145deg, #f8fafc 0%, #e8f4fd 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(42, 82, 152, 0.2);
+            box-shadow: 0 4px 15px rgba(42, 82, 152, 0.1);
+        }
+
+        /* 汉堡菜单样式 */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 10px;
+            z-index: 1001;
+        }
+
+        .hamburger-box {
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+            position: relative;
+        }
+
+        .hamburger-inner {
+            width: 100%;
+            height: 2px;
+            background-color: #ffffff;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: background-color 0.3s;
+        }
+
+        .hamburger-inner::before,
+        .hamburger-inner::after {
+            content: '';
+            width: 100%;
+            height: 2px;
+            background-color: #ffffff;
+            position: absolute;
+            left: 0;
+            transition: transform 0.3s;
+        }
+
+        .hamburger-inner::before {
+            top: -6px;
+        }
+
+        .hamburger-inner::after {
+            top: 6px;
+        }
+
+        /* 移动端样式 */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+                box-shadow: 0 8px 25px rgba(30, 60, 114, 0.3);
+                z-index: 1000;
+                flex-direction: column;
+                padding: 1rem;
+                border-bottom: 3px solid #4a90e2;
+            }
+
+            .nav-links li {
+                margin: 0.5rem 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .keynote-speakers-header h1 {
+                font-size: 2.5em;
+            }
+
+            .speaker {
+                padding: 2rem 1.5rem;
+            }
+
+            .speaker-content {
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+            }
+
+            .speaker-photo img,
+            .speaker-photo-placeholder {
+                width: 160px;
+                height: 200px;
+            }
+
+            .speaker-name {
+                font-size: 1.8em;
+                text-align: center;
+            }
+
+            .speaker-affiliation {
+                text-align: center;
+            }
+        }
+
+        /* 动画效果 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .speaker {
+            animation: fadeInUp 0.8s ease-out;
+        }
+    </style>
 </head>
 <body>
-    <header>
+     <header class="main-header">
+    <nav class="navbar">
         <div class="container">
-            <h1>魏明强教授</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">个人简介</a></li>
-                    <li><a href="courses.html">主讲课程</a></li>
-                    <li><a href="papers.html">学术论文</a></li>
-                    <li><a href="achievements.html">个人荣誉</a></li>
-                    <li><a href="projects.html">项目</a></li>
-                </ul>
-            </nav>
+            <a href="index.html" class="logo">
+                <img src="logo11.png" alt="CW Logo">
+            </a>
+            <!-- 汉堡菜单按钮 -->
+            <button class="hamburger" aria-label="Toggle navigation">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+            <!-- 导航链接 -->
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="flyer.html">Flyer</a></li>
+                <li><a href="Papers.html">Call for Papers</a></li>
+                <li><a href="program.html">Program</a></li>
+                <li><a href="awards.html">Awards</a></li>
+                <li><a href="speakers.html">Keynote Speakers</a></li>
+                <li><a href="committee.html">Committee</a></li>
+                <li><a href="registration.html">Registration</a></li>
+                <li><a href="venue.html">For Attendees</a></li>
+                <li><a href="events.html">Social Events</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
         </div>
-    </header>
+    </nav>
+</header>
 
     <main>
-        <section class="achievements">
-            <h2>个人荣誉及社会兼职</h2>
-            <ul>
-    
-                <li>1. 2014年香港中文大学青年学者最佳博士毕业论文奖</li>
-                <li>2. 2015年南京“321”计划</li>
-                <li>3. 2014年国科杯“我要创业”大赛一等奖</li>
-                <li>4. 2020年南京航空航天大学“青年学者”创新奖</li>
-                <li>5. 2020年中国机器人大赛3D视觉大赛一等奖（指导教师</li>
-                <li>6. 2019年南航本科学学术论文一等奖（江苏省二等奖）、二等奖（指导教师）</li>
-                <li>7. 江苏省计算机学会计算机学会青年科技奖</li>
-                <li>8. 第14届中国计算机图形学大会最佳论文奖(Best paper award)</li>
-                <li>9. 脑机智能技术教育部重点实验室副主任</li>
-                <li>10. 江苏省智能制造工程学会常务理事</li>
-                <li>11. 山西省计算机学会理事</li>
-                <li>12. ACM Transactions on Multimedia Computing, Communications and Applications(ACM TOMM)编委（Associate Editor）</li>
-                <li>13. The Visual Computer 编委（Associate Editor）</li>
-                <li>14. IEEE Transations on Mulitimedia(IEEE TMM)客座主编（2021-2024）</li>
-                <li>15. 计算机辅助设计与图形学学报编委</li>
-                <li>16. CVPR/ICCV/ECCV/AAAI/IJAL/ACM MM等CCF A/B类国际会议程序委员会委员</li>
-                <li>17. IEEE Senior Member</li>
-                <!-- Add more achievements here -->
-            </ul>
+        <section class="keynote-speakers-section">
+            <div class="container">
+                <div class="keynote-speakers-header">
+                    <h1>Keynote Speakers</h1>
+                    <h3>Cyberworlds 2025 Conference</h3>
+                </div>
+
+                <div class="speaker">
+                    <div class="speaker-content">
+                        <div class="speaker-photo">
+                            <!-- 证件照占位区域 - 您可以将演讲者照片放在这里 -->
+                            <div class="speaker-photo-placeholder">
+                                Prof. Bin SHENG<br>
+                                Photo Placeholder<br>
+                                (200×250px)
+                            </div>
+                            <!-- 如果有照片，请使用以下代码替换上面的占位符：
+                            <img src="prof_bin_sheng.jpg" alt="Prof. Bin Sheng">
+                            -->
+                        </div>
+                        
+                        <div class="speaker-info">
+                            <h2 class="speaker-name">Prof. Bin SHENG</h2>
+                            <div class="speaker-affiliation">Professor, Shanghai Jiao Tong University</div>
+                            
+                            <div class="talk-section">
+                                <h3 class="talk-title">Title: REVERIE: A deep reinforcement learning-based VR sports system to combat adolescent obesity</h3>
+                                
+                                <div class="talk-abstract">
+                                    <strong>Abstract:</strong> Adolescents with overweight can improve not only their physical fitness but also their mental health through physical activity. However, they often face multiple barriers, such as insufficient motivation and skills, low self-esteem, and negative peer pressure. In our research, we have developed an advanced virtual reality (VR) sports system specifically designed for adolescents, named REVERIE. This system integrates deep reinforcement learning and focuses on guidance, delivering an immersive virtual sports experience. REVERIE consists of three core components: a VR sports environment, VR sports guidance, and VR sports visualization. To ensure the safety of the VR sports environment, we adopt an iterative human-in-the-loop optimization process. We have proposed a two-stage deep reinforcement learning method based on templates and feedback: in the template stage, the artificial virtual agent acquires fine-grained sports skills; in the feedback stage, it is personalized to each participant. To enhance the VR sports visualization, we have integrated a sports-oriented immersion enhancement module into REVERIE. Quantitative results show that REVERIE outperforms existing methods in terms of both safety and user experience. This research highlights the potential of VR sports as an innovative sports management approach to benefit overweight adolescents.
+                                </div>
+                            </div>
+
+                            <div class="bio-section">
+                                <h3>Biography</h3>
+                                <div class="speaker-bio">
+                                    Bin Sheng obtained his Ph.D. degree in Computer Science and Engineering from The Chinese University of Hong Kong in 2011. He currently serves as a Full Professor at the Department of Computer Science and Engineering, Shanghai Jiao Tong University. His research interests span virtual reality, machine learning, and medical data analysis. His work has been published in top-tier journals, including Nature Medicine, Nature Communications, IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), IEEE Transactions on Visualization and Computer Graphics (TVCG), and International Journal of Computer Vision (IJCV). Dr. Sheng holds editorial roles as Managing Editor of The Visual Computer and Associate Editor of the Journal of Virtual Reality and Intelligent Hardware. He has also contributed significantly to conference organization, serving as Program Co-Chair of Computer Graphics International (CGI) from 2020 to 2022, and Conference Co-Chair of CGI (2023–2024) and CASA 2024. Additionally, he was AI Challenge Co-Chair for DeepDRiD (ISBI 2020), DRAC (MICCAI 2022), and MMAC (MICCAI 2023). In recognition of his contributions, he received the Outstanding Contribution Award from the Computer Graphics Society in 2023.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2025 魏明强教授个人主页</p>
-    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            hamburger.addEventListener('click', function () {
+                // 切换导航栏的显示状态
+                navLinks.classList.toggle('active');
+                // 切换汉堡菜单的动画
+                hamburger.classList.toggle('is-active');
+            });
+
+            // 添加平滑滚动效果
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // 观察所有演讲者卡片
+            document.querySelectorAll('.speaker').forEach(speaker => {
+                speaker.style.opacity = '0';
+                speaker.style.transform = 'translateY(30px)';
+                speaker.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                observer.observe(speaker);
+            });
+        });
+    </script>
+    
 </body>
 </html>
